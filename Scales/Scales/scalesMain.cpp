@@ -4,11 +4,13 @@
 using namespace std;
 
 int main(){
-	
-	ofstream myfile;
-	myfile.open("theScales.txt");
-	myfile << "Writing this to a file.\n";
-	myfile.close();
+
+	ifstream scalesFile("theScales.txt");
+	string scale;	
+
+	while (scalesFile >> scale) {
+		cout << scale;
+	}
 
 	return 0;
 }
