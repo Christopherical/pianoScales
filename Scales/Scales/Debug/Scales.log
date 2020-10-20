@@ -1,2 +1,3 @@
 ﻿  scalesMain.cpp
+C:\Users\Chris\Desktop\ProgrammingProjects\pianoScales\Scales\Scales\scalesMain.cpp(21,17): warning C4018: '<': signed/unsigned mismatch
   Scales.vcxproj -> C:\Users\Chris\Desktop\ProgrammingProjects\pianoScales\Scales\Debug\Scales.exe
