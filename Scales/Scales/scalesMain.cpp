@@ -8,28 +8,24 @@ using namespace std;
 
 int main(){
 	ifstream scalesFile("theScales.txt");
-	vector<string> dynamics = { "p", "mf", "f" };
+	vector<string> dynamics = { "(p)", "(mf)", "(f)" };
 	vector<string> articulation = { "legato", "stacatto" };
 	vector<string> scales;
 	string item;
 
 	srand(time(0));
-
 	
+	//Read theScales.txt file and push them into vector.
 	if (scalesFile.is_open()) {
 		while (getline(scalesFile, item)) {			
 			scales.push_back(item);
 		}
 		scalesFile.close();
-	}
-	
+	}	
 
-	for (int i = 0; i < 100; i++) {
-		cout << (rand() % scales.size()) << endl;
-	}
+	//Output Random scale with random articulation and dynamics.
+	cout << scales[(rand() % scales.size())] + " + " << dynamics[(rand() % dynamics.size())] + " + "
+		<< articulation[(rand() % articulation.size())] << + "." << endl;	
 	
-	
-	string a;
-	cin >> a;
 	return 0;
 }
