@@ -7,6 +7,10 @@
 using namespace std;
 
 int main(){
+	//TODO: add functions for choosing the scales.
+	//TODO: add header file to store functions.
+	//Todo: change choice variable to something less stupid.
+
 	ifstream scalesFile("theScales.txt");
 	vector<string> dynamics = { "(p)", "(mf)", "(f)" };
 	vector<string> articulation = { "legato", "stacatto" };
@@ -14,8 +18,6 @@ int main(){
 	string item;
 	string exit;
 	string choice;
-
-
 	srand(time(0));
 	
 	//Read theScales.txt file and push them into vector.
@@ -46,5 +48,7 @@ int main(){
 		}
 	}	
 	
+	string a;
+	cin >> a;
 	return 0;
 }
