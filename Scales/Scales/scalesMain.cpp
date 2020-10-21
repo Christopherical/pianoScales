@@ -13,6 +13,8 @@ int main(){
 	vector<string> scales;
 	string item;
 	string exit;
+	string choice;
+
 
 	srand(time(0));
 	
@@ -23,16 +25,24 @@ int main(){
 		}
 		scalesFile.close();
 	}	
-
-	//Output Random scale with random articulation and dynamics.
-	while (true) {
-		if (exit != "a") {
+	cout << "Please choose yes for all 5." << endl;
+	cin >> choice;
+	if (choice == "yes") {
+		for (int i = 0; i < 6; i++) {
 			cout << scales[(rand() % scales.size())] + " + " << dynamics[(rand() % dynamics.size())] + " + "
 				<< articulation[(rand() % articulation.size())] << +"." << endl;
-			cin >> exit;
 		}
-		else {
-			break;
+	}
+	else {		
+		while (true) {
+			if (exit != "a") {
+				cout << scales[(rand() % scales.size())] + " + " << dynamics[(rand() % dynamics.size())] + " + "
+					<< articulation[(rand() % articulation.size())] << +".\n" << endl;
+				cin >> exit;
+			}
+			else {
+				break;
+			}
 		}
 	}	
 	
