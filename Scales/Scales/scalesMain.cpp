@@ -19,7 +19,8 @@ int main(){
 
 	for (int i=0; i<scales.size(); i++) {
 		cout << scales[i] << endl;
-	}	
-
+	}
+	string a;
+	cin >> a;
 	return 0;
 }
