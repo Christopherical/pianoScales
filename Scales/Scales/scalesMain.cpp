@@ -4,6 +4,7 @@
 #include <vector>
 #include <ctime>
 #include <windows.h>
+#include <typeinfo>
 
 using namespace std;
 
@@ -24,6 +25,12 @@ public:
 	}	
 };
 
+int getInt() {
+	string returnedInt;
+	cin >> returnedInt;	
+	return stoi(returnedInt);
+}
+
 int main(){	
 
 	// Rowan's TODO List:
@@ -39,15 +46,17 @@ int main(){
 	vector<string> scales = readFile.readScales("theScales.txt");
 
 	cout << "How many scales?";
-	int amount;
-	cin >> amount;	
+	int amount = getInt();
+	cout << amount;
+
+	/*
 
 	srand(time(0));	
 	
 	while (exit != "y") {			
 		cout << "-------------------------\n\n";
 		for (int i = 0; i < amount; i++) {
-			cout << scales[(rand() % scales.size())] + " + " << dynamicsArticulation[0][(rand() % dynamicsArticulation[0].size())] + " + "
+			cout << i+1 << ":" << scales[(rand() % scales.size())] + " + " << dynamicsArticulation[0][(rand() % dynamicsArticulation[0].size())] + " + "
 				<< dynamicsArticulation[1][(rand() % dynamicsArticulation[1].size())] << +".\n\n";
 		}
 		cout << "-------------------------\n";
@@ -56,6 +65,7 @@ int main(){
 		cin >> exit;
 		exit = tolower(exit[0]);		
 	}	
+	*/
 	
 	return 0;
 }
