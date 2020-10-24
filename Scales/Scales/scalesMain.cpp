@@ -24,12 +24,8 @@ public:
 };
 
 int main(){
-
-	
-
 	//TODO: add functions for choosing the scales.
-	//TODO: add header file to store functions.
-	//Todo: change choice variable to something less stupid.
+	//TODO: add header file to store functions.	
 
 	// Rowan's TODO List:
 	// string initialisation can be simplified DONE
@@ -38,25 +34,17 @@ int main(){
 	// Change program flow so at all times you can get all, get one, or exit - look at switch statements
 	// Whilst not wrong, it's typically frowned upon from my experience to use while(true)
 	
-	//vector<vector<string>> dynamicsArticulation = { { "(p)", "(mf)", "(f)" }, { "legato", "stacatto" } };
-	vector<string> dynamics = { "(p)", "(mf)", "(f)" };
-	vector<string> articulation = { "legato", "stacatto" };
-	vector<string> scales;
-	string item, exit, choice;	
-	readFileReturnScales readFile;
-	scales = readFile.readScales("theScales.txt");
+	vector<vector<string>> dynamicsArticulation = { { "(p)", "(mf)", "(f)" }, { "legato", "stacatto" } };		
+	string exit;
+	readFileReturnScales readFile;	
+	vector<string> scales = readFile.readScales("theScales.txt");
 
 	srand(time(0));		
 		
-	while (true) {
-		if (exit != "a") {
-			cout << scales[(rand() % scales.size())] + " + " << dynamics[(rand() % dynamics.size())] + " + "
-				<< articulation[(rand() % articulation.size())] << +".\n" << endl;
-			cin >> exit;
-		}
-		else {
-			break;
-		}
+	while (exit != "a") {		
+		cout << scales[(rand() % scales.size())] + " + " << dynamicsArticulation[0][(rand() % dynamicsArticulation[0].size())] + " + "
+			<< dynamicsArticulation[1][(rand() % dynamicsArticulation[1].size())] << +".\n" << endl;
+		cin >> exit;		
 	}
 		
 	
