@@ -3,8 +3,6 @@
 #include <string>
 #include <vector>
 #include <ctime>
-#include <windows.h>
-#include <typeinfo>
 
 using namespace std;
 
