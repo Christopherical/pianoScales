@@ -37,7 +37,10 @@ int main(){
 	string exit;
 	readFileReturnScales readFile;	
 	vector<string> scales = readFile.readScales("theScales.txt");
-	const int amount = 5;
+
+	cout << "How many scales?";
+	int amount;
+	cin >> amount;	
 
 	srand(time(0));	
 	
