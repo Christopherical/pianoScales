@@ -11,6 +11,13 @@ int main(){
 	//TODO: add header file to store functions.
 	//Todo: change choice variable to something less stupid.
 
+	// Rowan's TODO List:
+	// string initialisation can be simplified
+	// Put the file reading into it's own class
+	// Don't use a number typed out for the selection of all (5), or in the loop after it
+	// Change program flow so at all times you can get all, get one, or exit - look at switch statements
+	// Whilst not wrong, it's typically frowned upon from my experience to use while(true)
+
 	ifstream scalesFile("theScales.txt");
 	vector<string> dynamics = { "(p)", "(mf)", "(f)" };
 	vector<string> articulation = { "legato", "stacatto" };
