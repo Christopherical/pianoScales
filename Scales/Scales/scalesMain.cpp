@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <ctime>
+#include <windows.h>
 
 using namespace std;
 
@@ -36,16 +37,21 @@ int main(){
 	string exit;
 	readFileReturnScales readFile;	
 	vector<string> scales = readFile.readScales("theScales.txt");
+	const int amount = 5;
 
-	srand(time(0));		
+	srand(time(0));	
+	
+	while (exit != "y") {			
+		cout << "-------------------------\n\n";
+		for (int i = 0; i < amount; i++) {
+			cout << scales[(rand() % scales.size())] + " + " << dynamicsArticulation[0][(rand() % dynamicsArticulation[0].size())] + " + "
+				<< dynamicsArticulation[1][(rand() % dynamicsArticulation[1].size())] << +".\n\n";
+		}
+		cout << "-------------------------\n";
 
-	cout << "Enter \'y\' to exit" << endl;
-	while (exit != "y") {		
-		cout << scales[(rand() % scales.size())] + " + " << dynamicsArticulation[0][(rand() % dynamicsArticulation[0].size())] + " + "
-			<< dynamicsArticulation[1][(rand() % dynamicsArticulation[1].size())] << +".\n" << endl;
-
+		cout << "\nEnter \'yes\' to exit\n\n";
 		cin >> exit;
-		exit = tolower(exit[0]);
+		exit = tolower(exit[0]);		
 	}	
 	
 	return 0;
