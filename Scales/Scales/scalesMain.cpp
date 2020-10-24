@@ -23,16 +23,14 @@ public:
 	}	
 };
 
-int main(){
-	//TODO: add functions for choosing the scales.
-	//TODO: add header file to store functions.	
+int main(){	
 
 	// Rowan's TODO List:
 	// string initialisation can be simplified DONE
 	// Put the file reading into it's own class DONE
 	// Don't use a number typed out for the selection of all (5), or in the loop after it
 	// Change program flow so at all times you can get all, get one, or exit - look at switch statements
-	// Whilst not wrong, it's typically frowned upon from my experience to use while(true)
+	// Whilst not wrong, it's typically frowned upon from my experience to use while(true) DONE
 	
 	vector<vector<string>> dynamicsArticulation = { { "(p)", "(mf)", "(f)" }, { "legato", "stacatto" } };		
 	string exit;
@@ -40,14 +38,15 @@ int main(){
 	vector<string> scales = readFile.readScales("theScales.txt");
 
 	srand(time(0));		
-		
-	while (exit != "a") {		
+
+	cout << "Enter \'y\' to exit" << endl;
+	while (exit != "y") {		
 		cout << scales[(rand() % scales.size())] + " + " << dynamicsArticulation[0][(rand() % dynamicsArticulation[0].size())] + " + "
 			<< dynamicsArticulation[1][(rand() % dynamicsArticulation[1].size())] << +".\n" << endl;
-		cin >> exit;		
-	}
-		
-	
+
+		cin >> exit;
+		exit = tolower(exit[0]);
+	}	
 	
 	return 0;
 }

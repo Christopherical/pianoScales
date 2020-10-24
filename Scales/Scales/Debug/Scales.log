@@ -1,3 +1,1 @@
-﻿  scalesMain.cpp
-C:\Users\Chris\Desktop\ProgrammingProjects\pianoScales\Scales\Scales\scalesMain.cpp(42,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Scales.vcxproj -> C:\Users\Chris\Desktop\ProgrammingProjects\pianoScales\Scales\Debug\Scales.exe
+﻿  Scales.vcxproj -> C:\Users\Chris\Desktop\ProgrammingProjects\pianoScales\Scales\Debug\Scales.exe
