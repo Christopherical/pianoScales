@@ -8,6 +8,7 @@
 
 using namespace std;
 
+//Read File Class.
 class readFileReturnScales {
 public:	
 	vector<string> returnedFile;
@@ -25,10 +26,15 @@ public:
 	}	
 };
 
+//Input Validation.
 int getInt() {
-	string returnedInt;
-	cin >> returnedInt;	
-	return stoi(returnedInt);
+	int amount;
+	while (!(cin >> amount)) {
+		cout << "Error: Input was not a number. Input a number\n";
+		cin.clear();
+		cin.ignore(22, '\n');
+	}
+	return amount;
 }
 
 int main(){	
@@ -46,10 +52,7 @@ int main(){
 	vector<string> scales = readFile.readScales("theScales.txt");
 
 	cout << "How many scales?";
-	int amount = getInt();
-	cout << amount;
-
-	/*
+	int amount = getInt();	
 
 	srand(time(0));	
 	
@@ -64,8 +67,7 @@ int main(){
 		cout << "\nEnter \'yes\' to exit\n\n";
 		cin >> exit;
 		exit = tolower(exit[0]);		
-	}	
-	*/
+	}
 	
 	return 0;
 }
