@@ -7,10 +7,10 @@
 using namespace std;
 
 //Read File Class.
-class readFileReturnScales {
+class readFileReturnScales { // this class name is horrific :P call it something like "ScaleReader", then call the function "ReadScalesFromFile"
 public:	
-	vector<string> returnedFile;
-	string item;
+	vector<string> returnedFile;//this should not be global
+	string item;//this should alos not be global
 	vector<string> readScales(string scalesTxt) {
 		ifstream scalesFile(scalesTxt);
 		
@@ -38,13 +38,12 @@ int getInt() {
 int main(){	
 
 	// Rowan's TODO List:
-	// string initialisation can be simplified DONE
-	// Put the file reading into it's own class DONE
-	// Don't use a number typed out for the selection of all (5), or in the loop after it
-	// Change program flow so at all times you can get all, get one, or exit - look at switch statements
-	// Whilst not wrong, it's typically frowned upon from my experience to use while(true) DONE
+	// look into static classes and consider using it on readFileReturnScales
+	// Put the file reading class into it's own header and .cpp files, and learn the importance of using a header file
+	// Look into C++ endl
+	// You can't enter more than one number
 	
-	vector<vector<string>> dynamicsArticulation = { { "(p)", "(mf)", "(f)" }, { "legato", "stacatto" } };		
+	vector<vector<string>> dynamicsArticulation = { { "(p)", "(mf)", "(f)" }, { "legato", "stacatto" } }; //Does this need to by a vector within a vector?
 	string exit;
 	readFileReturnScales readFile;	
 	vector<string> scales = readFile.readScales("theScales.txt");
@@ -57,6 +56,8 @@ int main(){
 	while (exit != "y") {			
 		cout << "-------------------------\n\n";
 		for (int i = 0; i < amount; i++) {
+
+			//Make this easier to read
 			cout << i+1 << ":" << scales[(rand() % scales.size())] + " + " << dynamicsArticulation[0][(rand() % dynamicsArticulation[0].size())] + " + "
 				<< dynamicsArticulation[1][(rand() % dynamicsArticulation[1].size())] << +".\n\n";
 		}
